@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>蜂窝网注册</title>
+    <meta name="viewport" content="width-device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+
+    <link rel="stylesheet" href="../css/all.css"/>
+    <link rel="stylesheet" href="../css/reg.css"/>
+
+    <script>
+        $(function(){
+        });
+
+        /*验证手机号码 移出和提交前验证*/
+        function check_phone(obj){
+            var phone = $("input[type='text']").val();
+            var phone_reg =/^1[3-8]\d{9}$/;
+
+            if(phone.length>0){
+                if(!phone_reg.test(phone)){
+                    $(".err_tip").show();
+                    return false;
+                }else{
+                    $(".err_tip").hide();
+                    return true;
+                }
+            }else{
+                $(".err_tip").show();
+                return false;
+            }
+        }
+
+        /*
+        function reg_now(){
+            window.location.href='regss.html';
+        }*/
+
+    </script>
+
+</head>
+<body style={"background-image:url('../img/reg/26.jpg');"}>
+
+    <div class="wapper">
+        <div class="wapper_log">
+            <!--<img src="../img/reg/logo-new.png" alt=""/>-->
+            <a class="wapper_img_log" href=""></a>
+        </div>
+        <div class="wapper_contant">
+            <div class="wapper_contant_left">
+
+               <form method="get" action="../public/regss.html"  onsubmit="return check_phone()">
+                    <div class="err_tip" style="display: none">手机号码不正确</div>
+                    <div>
+                        <input  type="text" name="phone" placeholder="您的手机号码" value="" onblur="check_phone()"/>
+                    </div>
+                    <div><button  onclick="reg_now()">立即注册</button></div>
+                    <div class="agreement">
+                        注册视为同意
+                        <a href="#">《马蜂窝用户协议》</a>
+                    </div>
+                    <div class="cooperate">
+                        <p class="cooperate_p">用合作网站账户直接登陆</p>
+                        <div>
+                            <ul class="list-unstyled d-flex justify-content-around">
+                                <li><a class="weibo" href=""></a><p class="weibo_p">新浪微博</p></li>
+                                <li><a class="qq" href=""></a><p>QQ</p></li>
+                                <li><a class="weix" href=""></a><p>微信</p></li>
+                            </ul>
+                        </div>
+                    </div>
+               </form>
+
+            </div>
+            <div class="wapper_contant_right">
+                <img src="../img/reg/code.jpg" alt=""/>
+                <div>
+                    <p>
+                        扫一扫<br>
+                        下载马蜂窝APP
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="wapper_footer">
+            已注册？<a href="#">马上登陆</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

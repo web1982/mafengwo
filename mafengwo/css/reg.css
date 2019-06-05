@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    /*border: 1px solid #e0a800;*/
+}
+
+body{
+    background:url(../img/reg/26.jpg) no-repeat;
+    background-size:100% 100%;
+    overflow:scroll;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+
+}
+
+.fullscreen-bg{
+    margin: 0;
+    padding: 0;
+    background-position:50%,50%;
+    background-size:cover;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/*注册页内容部分*/
+.wapper{
+
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -245px 0 0 -332px;
+    /*background: #ffffff;*/
+}
+
+.wapper_img_log {
+    display: block;
+    width: 75px;
+    height: 90px;
+    background: url(../img/reg/logo-new.png);
+    background-position: 0px 0px;
+    margin: auto;
+}
+.wapper_footer{
+    width: 135px;
+    display: block;
+    margin: auto;
+}
+
+
+.wapper_contant{
+    background: #ffffff;
+}
+
+
+.wapper_contant_left,.wapper_contant_right{
+    position: relative;
+    float: left;
+
+}
+.wapper_contant_left{
+    width: 65%;
+}
+
+.wapper_contant_right{
+    width: 35%;
+    height: 300px;
+}
+.wapper_contant_right img{
+
+    margin-top: 12px;
+    margin-left: 12px;
+    width: 180px;
+    height: 180px;
+}
+.wapper_contant_right div{
+    text-align: center;
+    margin-top: 26px;
+}
+
+.wapper_contant{
+    width: 600px;
+    height: 300px;
+    position: relative;
+}
+
+/*清除浮动 不影响下面div模板的文档流*/
+.wapper_contant:after{
+    /*position: absolute;*/
+    content: "";
+    clear: both;
+}
+
+/*注册框*/
+input{
+    width: 90%;
+    height: 42px;
+    color: #666;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    font-size: 1.05rem;
+    outline: 0;
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 12px;
+
+}
+
+input:hover{
+    box-shadow: 0 0 5px #ffa200;
+}
+input:focus{
+    border: 2px solid #ffa200;
+}
+.err_tip{
+    color: red;
+    font-size: 0.83rem;
+    background:url(../img/reg/err_ico2.png) 20px -55px no-repeat #fff !important;
+    position: absolute;
+    padding-left: 42px;
+    padding-top:5px;
+    padding-bottom: 5px;
+
+}
+.wapper_contant_left div>button{
+    width: 90%;
+    height: 42px;
+    background: #ffa800;
+    font-size: 1.25rem;
+    font-weight:bold;
+    color: #ffffff;
+    border-radius: 4px;
+    border: 0;
+    margin-left: 20px;
+}
+.agreement{
+    text-align: right;
+    position: relative;
+    font-size: 0.85rem;
+    color: #ccc;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    padding-right: 11px;
+}
+.agreement a{
+    font-size: 0.95rem;
+    color: #999999;
+}
+.agreement a:hover{
+    font-size: 0.95rem;
+    color: #3f200f;
+}
+.cooperate{
+    font-size: 0.95rem;
+    color: #999999;
+}
+.cooperate p{
+    margin-top: 10px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.cooperate_p{
+    text-align: left!important;
+    margin-left: 20px!important;
+}
+.cooperate>div>ul>li{
+
+    float: left;
+    /*margin-left: 20px;*/
+}
+
+/*合作单位图标*/
+.weibo,.qq,.weix {
+    border-radius: 50%;
+    display: block;
+    width: 42px !important;
+    height: 42px;
+    margin-top: 20px;
+    background:url(../img/reg/c_icon3.gif);
+}
+
+.weibo{
+    background-position: 0px 0px;
+}
+.qq{
+    background-position: -42px 0px;
+}
+.weix{
+    background-position: 84px 0px;
+}
+
+.weibo_p{
+    margin-left:-5px!important;
+}
+
+.wapper_contant_right{
+
+    color: #797979;
+    font-size: 1.25rem;
+}
+
+.wapper_footer:not(a){
+    font-size: 0.83rem;
+    color: #ffffff;
+}
+.wapper_footer a{
+    font-size: 0.83rem;
+    color: #ffa800;
+}
+.wapper_footer{
+    border-radius: 15px;
+    background-color:rgba(0,0,0,0.4);
+    text-align: center;
+    padding:4px 0;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

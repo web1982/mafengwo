@@ -1,0 +1,283 @@
+.footer{
+    /*border:1px solid red;*/
+    background-color: #3c3c3c;
+    line-height: 22px;
+
+}
+.footer_cons>div{
+   /* border:1px solid red;*/
+}
+
+.footer_cons a{
+    color:#c2c2c2;
+    font-size: 12px;
+    text-decoration: none;
+}
+.footer li:first-child>a{
+    font-size: 14px;
+
+}
+.footer li:first-child{
+    margin-bottom: 10px;
+    margin-top:15px;
+    line-height: 30px;
+}
+.footer strong{
+    color: #ff9d00;
+    font-weight: normal;
+}
+
+/*关于我们*/
+.info-about>ul>li:not(:first-child){
+        float: left;
+        margin-right: 14px;
+}
+.info-about>ul>li:last-child>a{
+    color: #ff9d00;
+    font-weight: normal;
+}
+
+/*旅行服务*/
+.info-service>ul>li:not(:first-child){
+    float: left;
+    margin-right: 25px;
+}
+
+.info-service>ul>li:last-child>a{
+    color: #ff9d00;
+    font-weight: normal;
+}
+
+/*扫描下载*/
+.scan>ul{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.scan>ul>li:first-child{
+    margin-top: 60px;!important;
+}
+
+.scan>ul>li{
+    width: 100px;
+    height: 100px;
+    background-image:url(../img/shaom.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 60px;
+}
+
+.scan>ul>li>span{
+    display: block;
+    margin-top: 90px;
+    text-align: center;
+    font-size: 12px!important;
+    color: #c2c2c2;
+}
+
+.scan li>span:first-child{
+    line-height: 22px;
+}
+
+/*footer中间部分*/
+.footer_center{
+    text-align: center;
+    /*height: 30px;*/
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #c2c2c2;
+}
+
+.footer_center_img{
+    margin-top: 10px;
+    text-align: center;
+    border-bottom: 1px solid #c2c2c2;
+
+}
+
+.footer_center_img>li{
+    margin:0;
+    padding: 0;
+}
+.header_right_b {
+    border-radius: 50%;
+    display: block;
+    width: 28px !important;
+    height: 28px;
+    margin-top: 3px;
+    background:url(../img/mfw-footer-sprite7.png);
+    background-position: 0px 0px;
+
+}
+
+.footer_center_img_ul{
+    width:100%;height:50px;
+    display:flex;
+    list-style:none;
+    justify-content:center;
+    margin:0 auto;
+    padding: 0;
+    align-items:center;
+}
+.footer_center_img_ul>li:first-child{
+    margin-top: 11px;
+    margin-left:2px;
+}
+
+.footer_center_img_ul>li{
+    margin-left: 10px;
+}
+
+.footer_center_img_ul>li:last-child{
+    margin-right: 16px;
+}
+
+/*友情链接*/
+
+.friendship_Div{
+    /*text-align:center;*/
+    width:100%;height:80px;
+    color: #c2c2c2 ;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+.friendship_Div_Ul{
+    list-style:none;
+    padding: 0;
+    font-size: 12px;
+}
+.friendship_Div_Ul>li{
+    font-size: 12px;
+    list-style:inline;
+    float: left;
+    margin-right: 12px;
+
+}
+.friendship_Div_Ul>li:first-child{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    line-height: 22px;
+
+}
+.friendship_Div_Ul>li>a{
+    color:#c2c2c2 ;
+   font-size: 12px;
+}
+
+.friendship_Div_Ul>li:first-child>a{
+    font-size: 12px;
+}
+
+
+/*底部备注*/
+.footer_remarks{
+    border-bottom: 1px solid #c2c2c2;
+    display: flex;
+    padding-top: 10px;
+}
+
+.footer_remarks_div{
+    margin-right: 10px;
+}
+
+.footer_remarks_ul{
+
+    list-style:none;
+    padding: 0;
+    float: right;
+
+}
+
+.footer_remarks_div>a{
+        display: block;
+        width: 136px;
+        height: 39px;
+        background:url(../img/mfw-footer-sprite7.png);
+        background-position:1px -29px;
+
+ }
+
+.footer_remarks_ul{
+    list-style:none;
+    padding: 0;
+}
+.footer_remarks_ul>li{
+    font-size: 12px;
+    list-style:inline;
+    float: left;
+    margin-right: 12px;
+    line-height: 22px;
+    color: #c2c2c2;
+}
+.footer_remarks_ul>li:first-child{
+    margin: 0 12px 0 0;
+    padding: 0;
+    line-height: 16px;
+}
+
+.footer_remarks_ul>li:nth-child(5) a {
+    color: #ff9d00;
+}
+.footer_remarks_ul span{
+    color: #ff9d00;
+}
+.footer_remarks_ul>li:last-child>a{
+    color: #ff9d00;
+}
+
+
+/*底部下的图片*/
+.footer_img{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+}
+.footer_img_ul{
+    list-style: none;
+    display: flex;
+}
+
+.footer_img_ul>li:first-child{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    line-height: 22px;
+    background:url(../img/mfw-footer-sprite7.png);
+    background-position: 1px -69px;
+}
+
+.footer_img_ul>li{
+    display: block;
+    width: 90px;
+    height: 30px;
+    margin-left: 10px;
+}
+.footer_remarks_ul>li>a{
+    color: #c2c2c2;
+}
+
+.footer_remarks_ul>li>a:hover{
+    color: #fff;
+}
+
+.footer_img_ul>li:nth-child(2){
+    background:url(../img/mfw-footer-sprite7.png);
+    background-position: 1px -110px;
+}
+.footer_img_ul>li:nth-child(3){
+    background:url(../img/mfw-footer-sprite7.png);
+    background-position: 1px -150px;
+}
+.footer_img_ul>li:last-child{
+    background:url(../img/mfw-footer-sprite7.png);
+    background-position: 1px -150px;
+}
+
+
+
+
+
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>蜂窝网注册</title>
+    <meta name="viewport" content="width-device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+
+    <link rel="stylesheet" href="../css/all.css"/>
+    <link rel="stylesheet" href="../css/regs.css"/>
+
+    <script>
+        $(function(){
+            $(".err_name").hide();
+            $(".err_name").val("");
+
+            /*调用公用验证函数*/
+            var uname = $("input[type='text'][name='uname']");//用户名
+            var pwd = $("input[name='pwd']");//密码
+            var pwds = $("input[name='pwds']");//确认密码
+            var vcode = $("input[name='vcode']");//短信验证码
+
+            var pwd_now="";
+
+            //定义正则表达式
+            var reg_name    = /^\w{6,12}$/;        //6-12位数字字母组合
+            var reg_pwd     = /^[0-9A-Za-z]{6,}$/;  //至少输入6个以上的数字或字母
+            var reg_vcode   = /^\d{4}$/;            //4位手机验证码
+
+            //表单离开事件调用验证函数
+            valil(uname,reg_name,1);
+            valil(pwd,reg_pwd,2);
+            valil(pwds,reg_pwd,3);
+
+            /*添加元素移出事件onblur*/
+            function valil(_obj,_reg,order){
+                _obj.bind('blur', function(e) {
+
+                    //离开事件获取当前值
+                    var vali = $(this).val();
+                    //alert(_obj.val().length);
+                    if(_obj.val().length!=null){
+                        if(!_reg.test(vali)){//验证错误
+                            if(order==1){
+                                $(".err_name").text("用户名：请输入6-12位的包含下划线的字母数字！");
+                            }else if(order==2){
+                                $(".err_name").text("密码：至少输入6个以上的数字或字母！");
+                            }else if(order==3){
+                                $(".err_name").text("输入的密码与验证码存在不一致！");
+                            }
+
+                            $(".err_name") .show();
+                            return false;
+
+                        }else{//验证正确通过
+
+                            if(order==2){
+                                pwd_now = _obj.val();//获取密码当前的值
+                                //首先清空重复密码的值
+                                pwds.val("");
+
+                            }else if(order==3){
+                                var pws_now =  _obj.val();
+                                //alert(pwd_now+"--"+pws_now);
+                                //验证密码和重复密码是否一致
+                                if(pwd_now!=pws_now){
+                                    $(".err_name").text("输入的密码与重复密码存在不一致，请重新输入！");
+                                    $(".err_name") .show();
+                                    return false;
+                                }
+                            }
+                            $(".err_name").hide();
+                        }
+                    }
+
+                });
+            }
+
+        });
+
+
+        function reg(){
+
+            var uname = $("input[type='text'][name='uname']");//用户名
+            var pwd = $("input[name='pwd']");//密码
+            var pwds = $("input[name='pwds']");//确认密码
+            var vcode = $("input[name='vcode']");//短信验证码
+
+            var pwd_now="";
+            //定义正则表达式
+            var reg_name    = /^\w{6,12}$/;        //6-12位数字字母组合
+            var reg_pwd     = /^[0-9A-Za-z]{6,}$/;  //至少输入6个以上的数字或字母
+            var reg_vcode   = /^\d{4}$/;            //4位手机验证码
+
+            //表单数据为空验证
+            if(uname.val() == ""){
+                $(".err_name").text("用户名不能为空！！");
+                $(".err_name") .show();
+                return false;
+            }
+            if(pwd.val()   == ""){
+                $(".err_name").text("密码不能为空！");
+                $(".err_name") .show();
+                return false;
+            }
+            if(pwds.val()  == ""){
+                $(".err_name").text("重复密码不能为空！");
+                $(".err_name") .show();
+                return false;
+            }
+            if(vcode.val() == ""){
+                $(".err_name").text("验证码不能为空！");
+                $(".err_name") .show();
+                return false;
+            }
+
+            if(!sub_valil(uname.val(),reg_name)){
+
+                $(".err_name").text("用户名：请输入6-12位的包含下划线的字母数字！!");
+                $(".err_name") .show();
+                return false;
+            }
+
+            if(!sub_valil(pwd.val(),reg_pwd)){
+                $(".err_name").text("密码：至少输入6个以上的数字或字母！");
+                $(".err_name") .show();
+                return false;
+            }
+
+            if(pwd.val() != pwds.val()){
+                $(".err_name").text("输入的密码与重复密码存在不一致，请重新输入！");
+                $(".err_name") .show();
+                return false;
+            }
+
+            if(!sub_valil(vcode.val(),reg_vcode)){
+                $(".err_name").text("验证码：请输入4位数字手机验证码！");
+                $(".err_name") .show();
+                return false;
+            }
+
+            //以上验证成功后提交用户信息
+            reg();
+
+        };
+
+        /*封装提交前表单验证函数*/
+        function sub_valil(data,_reg) {
+            var rut = true;
+            if(!_reg.test(data)){
+                rut=false;
+            }
+            return rut;
+        }
+
+
+        /*注册模块*/
+        function reg(){
+
+            var xhr = new XMLHttpRequest();
+
+            //2:创建请求，打开连接
+            xhr.open("post","/mfw_user/regs",true);
+
+            var formdata="uname="+uname.value+"&upwd="+pwd.value;
+
+            //由于服务器默认接收普通字符，设置请求头接收所有字符
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+            //3：发送请求
+            xhr.send(formdata);
+
+            //4:接受响应,绑定监听(可以放在第二步，能检查到状态为1,2的时候)
+            xhr.onreadystatechange = function(){
+
+                if(xhr.readyState==4 && xhr.status==200){
+                    //响应数据
+                    var result= "";
+                    result = xhr.responseText;
+                    //p_ok.innerHTML=result;
+                    location.href="index.html";
+
+                }
+
+            }
+        }
+
+
+
+    </script>
+
+</head>
+<body style={"background-image:url('../img/reg/26.jpg');"}>
+
+    <div class="wapper">
+        <div class="wapper_log">
+            <a class="wapper_img_log" href=""></a>
+        </div>
+       <!-- <form  action="/regs" id="reg_form" method='post'>-->
+            <div class="wapper_contant">
+
+                <div class="contant_title">账号注册</div>
+
+                    <div class="wapper_contant_left">
+                        <div class="err_name" style=" "></div><br>
+                        <div>
+                            <input  type="text" id="uname" name="uname" placeholder="您的名字" value="" />
+                        </div>
+                        <div>
+                            <input  type="password" id="pwd" name="pwd" placeholder="您的密码" value="" />
+                        </div>
+                        <div>
+                            <input  type="password" id="pwds" name="pwds" placeholder="确认密码" value="" />
+                        </div>
+
+                        <div class="VcoCde_div">
+                            <a href="#" class="VcoCde_send">免费获取验证码</a>
+                            <input  type="text"  class="VcoCde_input" id="vcode" name="vcode" placeholder="短信验证码" value=""/>
+                        </div>
+                        <div><button  id="reg_submit" onclick="reg()" >完成注册</button></div>
+                    </div>
+
+
+
+            </div>
+        <!--</form>-->
+
+    </div>
+
+</body>
+</html>

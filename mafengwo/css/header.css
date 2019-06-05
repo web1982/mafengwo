@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+#header{
+    height: 74px;
+}
+#content a{
+    margin: 0;
+    padding: 0;
+}
+
+.font-weight-bold{
+    font-size: 15px;
+
+}
+#header_index{
+    width: 60px;
+    /*background: #ebad4a !important;*/
+    line-height: 74px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#header_index:hover{
+    /*border-bottom: 1px solid #ebad4a;*/
+    /*margin-bottom: -1px;*/
+}
+
+.header_select{
+    margin-top: 10px;
+}
+.header_select:hover{
+    border-top: 3px solid #ff9d00;
+    margin-top: 7px;
+}
+
+
+.header_index_auther {
+    /*background: #ebad4a !important;*/
+    line-height: 58px;
+    text-align: center;
+}
+.nav-item:not(.header_right_login){
+    margin-right: 22px;
+}
+.header_hover:hover{
+
+     border-bottom: 3px solid #ff9d00;
+ }
+.header_hover a{
+    margin-top: 0px;
+}
+
+.header_hover{
+    margin-top: 9px;
+}
+
+.nav-item a{
+    margin-top: 0px;
+    padding: 0px;
+    width: 100%;
+
+}
+
+
+.navbar-right>li{
+    margin-right: 20px;
+
+}
+.inlin{
+    margin-left: 10px;
+    color: #ff9d00;
+}
+
+.header_right_a {
+
+     border-radius: 50%;
+     display: block;
+     width: 28px !important;
+     height: 28px;
+     background:url(../img/header.png);
+     background-position: 1px -48px;
+ }
+
+.header_right_b {
+    border-radius: 50%;
+    display: block;
+    width: 28px !important;
+    height: 28px;
+    margin-top: 20px;
+    background:url(../img/header.png);
+    background-position: -29px -49px;
+
+}
+
+.header_right_c {
+    border-radius: 50%;
+    display: block;
+    width: 28px !important;
+    height: 28px;
+    background:url(../img/header.png);
+    background-position: 1px -164px;
+}
+.header_right_a,.header_right_b,.header_right_c{
+    margin-top: 25px !important;
+    margin-left: 12px !important;
+}
+
+.header_right_login{
+    margin-top: 10px !important;
+    margin-left: 10px;
+}
+
+.header_right_login>a{
+    font-size: 14px;
+    color: #ff9d00;
+}
+
+#lunbo{
+    position: absolute;
+}
+#lunbo >.lunbo_div{
+    position:relative;
+    float:left;
+    margin-top:-328px;
+    margin-left:1186px;
+    z-index: 99999999;
+}
+.lunbo_div>ul>li{
+
+}
+
+/*响应式布局部分*/
+.col-lg-7{
+    padding: 0px;
+    line-height: 74px;
+}
+
+.header_C{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header_C li:not(.no_color):first-child{
+    background: #ff9d00;
+    width: 70px;
+    text-align: center;
+}
+.header_C>ul>li>a{
+    color: #000;!important;
+}
+.header_C>ul>li>a:not(.C-first):hover{
+    border-bottom: 3px solid #ff9d00;
+    margin-bottom: -3px;
+}
+
+.header_R{
+    line-height: 58px;
+}
+
+.header_R>li{
+    /*margin-top: 25px;*/
+}
+
+.header_R a{
+    text-decoration: none;
+}
+/*旅游商城下拉框*/
+.community{
+    width: 300px !important;
+
+}
+
+.Tourist_mall .community a{
+    text-decoration: none;
+    color: #000000;
+
+}
+
+.Tourist_mall .community li{
+    height: 40px;
+
+}
+.Tourist_mall>li>a{
+    text-decoration: none;
+}
+.Tourist_mall>li{
+    margin-left: 10px;
+}
+
+/*社区下拉框*/
+.no_color >a{
+    display: inline;
+    margin-left:10px;
+}
+
+.header_select_li>li{
+    margin-left:10px;
+}
+
+/*重写轮播图*/
+.carousel {
+    /*position: relative;*/
+}
+
+.carousel-indicators li{
+    width: 107px;
+    height: 67px;
+    position: relative;
+}
+
+.carousel-indicators li:first-child{
+    background: url(../img/lunbo_sm1.jpeg);
+}
+.carousel-indicators li:nth-child(2){
+    background: url(../img/lunbo2_sm.jpeg);
+}
+.carousel-indicators li:nth-child(3){
+    background: url(../img/lunbo3_sm.jpeg);
+}
+.carousel-indicators li:nth-child(4){
+    background: url(../img/lunbo_sm4.jpeg);
+}
+.carousel-indicators li:nth-child(5){
+    background: url(../img/lunbo5_sm.jpeg);
+}
+.carousel-indicators_div{
+    width: 100%;
+    position: relative;
+}
+
+.carousel-indicators{
+    flex-direction: column;
+    position: relative!important;
+    float: right;
+}
+
+/**响应式布局重写**/
+@media screen and (min-width: 992px){
+    .carousel-indicators{
+        padding: 0;
+        margin:-330px 54px 0px 80% !important;
+    }
+
+    .carousel-indicators li{
+        height:67px;
+    }
+
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .carousel-indicators{
+        margin: 0;
+        padding: 0;
+        margin:-220px 54px 0px 80% !important;
+    }
+    .carousel-indicators li{
+        height:45px;
+    }
+
+}
+@media screen and (max-width:767px){
+    .carousel-indicators{
+        padding: 0;
+        margin:-437px 54px 0px 80% !important;
+        display: none;
+    }
+    .carousel-indicators li{
+        height:35px;
+    }
+
+    .header_R{
+        margin-right: 20px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
